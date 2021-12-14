@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// REACT NATIVE
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { View, Text } from "react-native";
 
+// EXPO
+import AppLoading from "expo-app-loading";
+import { useFonts } from "expo-font";
+
+// COMPONENTS
+import NavBottom from "./components/NavBottom";
+
+// EXPORT DEFAULT MAIN APP
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  // FOR THE CUSTOM FONT
+  let [fontsLoaded] = useFonts({
+    UbuntuBold: require("./assets/fonts/Ubuntu-Bold.ttf"),
+    UbuntuLight: require("./assets/fonts/Ubuntu-Light.ttf"),
+    UbuntuMedium: require("./assets/fonts/Ubuntu-Medium.ttf"),
+    UbuntuRegular: require("./assets/fonts/Ubuntu-Regular.ttf"),
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  // CONDITION IF NOT LOADED TO RETURN THE DEFAULT FONT
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <NavigationContainer>
+        <NavBottom />
+        {/* {alert("PLS NOTE THAT IS APP IS ON DEVELOPMET PERIOD.")} */}
+      </NavigationContainer>
+    );
+  }
+}

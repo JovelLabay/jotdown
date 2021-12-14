@@ -1,29 +1,28 @@
 {
   "expo": {
-    "name": "jotdown",
+    "name": "Jotdown",
     "slug": "jotdown",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/jotdownLogo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/jotdownSplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/adaptive-jotdown-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.jovellabay.jotdown"
     },
     "web": {
       "favicon": "./assets/favicon.png"
